@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ent-Time-Bot</title>
+    <style>
+        /* Global Styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(90deg, #130a28, #260d3a, #3e1d5c, #2b1c41, #3c1f68, #1c0c33, #140825);
+            background-size: 400% 400%;
+            animation: gradientAnimation 9s ease infinite;
+            overflow: hidden;
+            flex-direction: column;
+            color: #ffffff;
+        }
+
+        /* Gradient Animation */
+        @keyframes gradientAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Header Styles */
+        header {
+            text-align: center;
+            color: #ffffff;
+            background-color: #000206; /* Dark, neutral blue */
+            padding: 20px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 30px; /* Space below header */
+            width: 80%;
+            max-width: 500px;
+            box-shadow: 0 0 20px 5px rgba(255, 223, 0, 0.5); /* Yellow glow */
+            height: 135px
+        }
+        header img {
+            width: 100px;
+            height: 100px;
+        }
+        header h1 {
+            font-size: 2.5em;
+            color: #33d8de;
+            flex-grow: 1;
+            text-align: center;
+        }
+        header h2 {
+            font-size: 1em;
+            color: #c94eb3;
+        }
+
+        /* Chat Container Styles */
+        #chat-container {
+            width: 80%;
+            max-width: 1200px;
+            max-height: 1000px;
+            background-color: #1f152e;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 0 20px 10px rgba(255, 255, 255, 0.3); /* White glow */
+        }
+        #chat-display {
+            height: 480px;
+            overflow-y: auto;
+            padding: 15px;
+            border-bottom: 1px solid #504f4f;
+            display: flex;
+            flex-direction: column;
+        }
+        .message {
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            max-width: 80%;
+            word-wrap: break-word;
+        }
+        .user {
+            align-self: flex-end;
+            background-color: #f38cd2;
+            color: #000000;
+            font-weight: bold;
+        }
+        .bot {
+            align-self: flex-start;
+            background-color: #bbbcc3;
+            color: #080505;
+            font-weight: bolder;
+        }
+
+        /* Input Section Styles */
+        #user-input-section {
+            display: flex;
+            padding: 15px;
+            background-color: #1c1233;
+        }
+        #user-input {
+            flex-grow: 1;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #5a317a;
+            border-radius: 5px;
+            background-color: #3e2b57;
+            color: #ffffff;
+        }
+        #send-button {
+            margin-left: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #92e4a5;
+            color: #000000;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-weight: bolder;
+        }
+        #send-button:hover {
+            background-color: #4519e6;
+            font-weight: bolder;
+        }
+
+        /* Add CSS styling for recommendation spacing (optional)*/
+.recommendation-space {
+  height: 15px; /* Adjust spacing height as needed */
+}
+    </style>
+</head>
+<body>
+    <!-- Header Section with Logo, Main Heading, and Subheading -->
+    <header>
+        <img src="images/logo.jpg" alt="Logo">
+        <div>
+            <h1>Ent-Time-Bot</h1>
+            <h2>- A Movie / TV Show Recommending Bot -</h2>
+        </div>
+    </header>
+    
+    <!-- Chat Container -->
+    <div id="chat-container">
+        <div id="chat-display"></div>
+        <div id="user-input-section">
+            <input type="text" id="user-input" placeholder="Type your message here..." />
+            <button id="send-button">Send</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
